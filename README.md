@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Anbazhagan
-- 👀 I’m a Technical Writer with 4.7 years of experience.
+- 👀 I’m a Technical Writer with 4.8 years of experience.
 - 💞️ I’m looking to collaborate with organisations involved in software development.
 - 📫 How to reach me? You can reach me on my mailid : anbusignsin@gmail.com or mobile number : +918825843583
 
