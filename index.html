@@ -541,6 +541,57 @@ footer {
   }
 }
 
+
+
+.company-section {
+  background: linear-gradient(180deg, rgba(229,9,20,.025), transparent);
+}
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+.company-card {
+  padding: 28px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(229,9,20,.025));
+  border: 1px solid rgba(229,9,20,.20);
+  box-shadow: var(--shadow);
+}
+.company-card:hover {
+  border-color: rgba(229,9,20,.65);
+  transform: translateY(-3px);
+}
+.company-card h3 {
+  margin: 6px 0 8px;
+  font-size: 1.35rem;
+}
+.company-card p {
+  color: var(--muted);
+  margin: 7px 0 0;
+}
+.company-card p strong {
+  color: #fff;
+}
+.company-status {
+  color: #ff5962;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.company-card.current {
+  border-color: rgba(229,9,20,.55);
+  box-shadow: 0 18px 45px rgba(0,0,0,.45), 0 0 24px rgba(229,9,20,.10);
+}
+.company-card.client-assignment {
+  background: linear-gradient(145deg, rgba(255,255,255,.025), rgba(143,11,18,.08));
+}
+@media (max-width: 700px) {
+  .company-grid { grid-template-columns: 1fr; }
+}
+
 </style>
 
 </head>
@@ -550,6 +601,7 @@ footer {
       <a class="brand" href="#top">Anbazhagan <span>K</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#expertise">Expertise</a>
         <a href="#industries">Industries</a>
         <a href="#portfolio">Portfolio</a>
@@ -605,6 +657,57 @@ footer {
             <span class="tag">User Guides</span>
             <span class="tag">Developer Docs</span>
             <span class="tag">Structured Content</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="experience" class="company-section">
+      <div class="container">
+        <div class="section-kicker">Career Experience</div>
+        <h2>Companies I've worked with</h2>
+        <p class="section-intro">A decade of technical documentation experience across enterprise software, medical devices, aerospace and industrial domains.</p>
+
+        <div class="company-grid">
+          <div class="company-card current">
+            <div class="company-status">CURRENT · JUL 2023 – PRESENT</div>
+            <h3>QAD Inc.</h3>
+            <p><strong>Technical Writer</strong></p>
+            <p>Enterprise ERP and manufacturing software documentation, including online help, release notes, user guides and product documentation for QAD Adaptive.</p>
+          </div>
+
+          <div class="company-card">
+            <div class="company-status">APR 2021 – JAN 2023</div>
+            <h3>Siemens Healthineers</h3>
+            <p><strong>Technical Writer</strong></p>
+            <p>Technical documentation for medical-device software and healthcare technology, including PACS and Syngo.plaza documentation environments.</p>
+          </div>
+
+          <div class="company-card">
+            <div class="company-status">SEP 2019 – FEB 2021</div>
+            <h3>HCL Technologies</h3>
+            <p><strong>Associate Engineer</strong></p>
+            <p>Aerospace and industrial technical documentation using structured authoring practices, including S1000D and iSpec 2200.</p>
+          </div>
+
+          <div class="company-card">
+            <div class="company-status">SEP 2017 – SEP 2019</div>
+            <h3>Sonovision Aetos</h3>
+            <p><strong>Engineer</strong></p>
+            <p>Technical documentation for aerospace and Oil & Gas domains, with experience in S1000D and iSpec 2200 documentation standards.</p>
+          </div>
+
+          <div class="company-card client-assignment">
+            <div class="company-status">CLIENT / DEPUTATION ASSIGNMENTS</div>
+            <h3>Honeywell Inc.</h3>
+            <p>Worked on aerospace technical documentation during deputation from HCL Technologies.</p>
+          </div>
+
+          <div class="company-card client-assignment">
+            <div class="company-status">CLIENT / DEPUTATION ASSIGNMENT</div>
+            <h3>UTC Aerospace / Collins Aerospace</h3>
+            <p>Worked on aerospace documentation during deputation from HCL Technologies.</p>
           </div>
         </div>
       </div>
