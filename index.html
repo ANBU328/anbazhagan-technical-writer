@@ -4,20 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Anbazhagan K — Senior Technical Writer and Technical Documentation Specialist with 10+ years of experience.">
-  <title>Anbazhagan K | Senior Technical Writer</title>
+  <title>Anbazhagan K | Senior Technical Writer & Documentation Specialist</title>
   <style>
-    :root {
-      --bg: #f7f8fa;
-      --surface: #ffffff;
-      --text: #172033;
-      --muted: #5f6b7a;
-      --line: #e4e8ee;
-      --accent: #3157d5;
-      --accent-dark: #2445b0;
-      --soft: #eef2ff;
-      --max: 1120px;
-    }
-    * { box-sizing: border-box; }
+    
+:root {
+  --bg: #090909;
+  --bg-soft: #111111;
+  --card: #151515;
+  --card-2: #1b1b1b;
+  --text: #f5f5f5;
+  --muted: #b7b7b7;
+  --red: #e50914;
+  --red-bright: #ff3340;
+  --red-dark: #8f0b12;
+  --border: rgba(255,255,255,.10);
+  --shadow: 0 18px 45px rgba(0,0,0,.45);
+}
+
+* { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
@@ -185,6 +189,157 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+  }
+}
+
+
+/* Dark + Red portfolio theme */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 85% 8%, rgba(229,9,20,.16), transparent 28%),
+    radial-gradient(circle at 10% 35%, rgba(143,11,18,.10), transparent 25%),
+    var(--bg);
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(229,9,20,.025), transparent 35%, rgba(255,255,255,.015));
+  z-index: -1;
+}
+
+header,
+nav,
+.navbar {
+  background: rgba(9,9,9,.88) !important;
+  border-bottom: 1px solid rgba(229,9,20,.22) !important;
+  backdrop-filter: blur(14px);
+}
+
+a {
+  color: var(--red-bright);
+}
+
+a:hover {
+  color: #fff;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 75% 35%, rgba(229,9,20,.24), transparent 32%),
+    linear-gradient(135deg, #080808 0%, #151515 58%, #21090b 100%) !important;
+  border-bottom: 1px solid rgba(229,9,20,.25);
+}
+
+.hero::after {
+  background: linear-gradient(90deg, transparent, rgba(229,9,20,.55), transparent) !important;
+}
+
+.eyebrow {
+  color: var(--red-bright) !important;
+  letter-spacing: .16em;
+}
+
+h1, h2, h3 {
+  color: #fff;
+}
+
+h1 {
+  text-shadow: 0 0 35px rgba(229,9,20,.16);
+}
+
+.section-heading h2::after {
+  background: linear-gradient(90deg, var(--red), transparent) !important;
+}
+
+.card,
+.skill-card,
+.contact-card,
+.expertise-card,
+.portfolio-card {
+  background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(229,9,20,.025)) !important;
+  border-color: rgba(229,9,20,.20) !important;
+  box-shadow: var(--shadow);
+}
+
+.card:hover,
+.skill-card:hover,
+.contact-card:hover,
+.expertise-card:hover,
+.portfolio-card:hover {
+  border-color: rgba(229,9,20,.65) !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,.55), 0 0 24px rgba(229,9,20,.10);
+  transform: translateY(-3px);
+}
+
+.tag,
+.badge,
+.skill-tag {
+  background: rgba(229,9,20,.10) !important;
+  color: #ff6b73 !important;
+  border-color: rgba(229,9,20,.30) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--red), #b20710) !important;
+  border-color: var(--red) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 28px rgba(229,9,20,.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff1d29, var(--red)) !important;
+  box-shadow: 0 12px 34px rgba(229,9,20,.38);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,.035) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.18) !important;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(229,9,20,.65) !important;
+  background: rgba(229,9,20,.08) !important;
+}
+
+.contact-section {
+  background: linear-gradient(180deg, transparent, rgba(229,9,20,.035), transparent);
+}
+
+.contact-icon {
+  background: rgba(229,9,20,.12) !important;
+  color: #ff4b55 !important;
+  border: 1px solid rgba(229,9,20,.25);
+}
+
+.portfolio-card {
+  background:
+    linear-gradient(145deg, rgba(229,9,20,.16), rgba(10,10,10,.92)) !important;
+}
+
+footer {
+  background: #060606 !important;
+  border-top: 1px solid rgba(229,9,20,.18);
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    background:
+      radial-gradient(circle at 90% 15%, rgba(229,9,20,.20), transparent 38%),
+      #090909 !important;
   }
 }
 
