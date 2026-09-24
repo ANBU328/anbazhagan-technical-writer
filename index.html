@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anbazhagan K — Senior Technical Writer and Technical Documentation Specialist with 10+ years of experience.">
+  <title>Anbazhagan K | Senior Technical Writer</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --line: #e4e8ee;
+      --accent: #3157d5;
+      --accent-dark: #2445b0;
+      --soft: #eef2ff;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 68px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 800; letter-spacing: -.02em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; font-size: .94rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+    .hero {
+      padding: 92px 0 76px;
+      background: linear-gradient(135deg, #ffffff 0%, #f2f5ff 100%);
+    }
+    .eyebrow {
+      display: inline-flex; padding: 7px 12px; border-radius: 999px;
+      background: var(--soft); color: var(--accent); font-weight: 700; font-size: .82rem;
+    }
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.055em; max-width: 850px; margin: 20px 0; }
+    .hero h1 span { color: var(--accent); }
+    .lead { max-width: 760px; color: var(--muted); font-size: 1.2rem; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn {
+      display: inline-block; padding: 12px 18px; border-radius: 10px;
+      font-weight: 750; border: 1px solid var(--line);
+    }
+    .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary { background: white; }
+    section { padding: 76px 0; }
+    .section-kicker { color: var(--accent); font-weight: 800; font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.035em; margin: 8px 0 14px; }
+    .section-intro { max-width: 720px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+      padding: 24px; box-shadow: 0 8px 30px rgba(28,40,65,.04);
+    }
+    .card h3 { margin-top: 0; margin-bottom: 8px; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .tag { background: white; border: 1px solid var(--line); padding: 7px 11px; border-radius: 999px; font-size: .9rem; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+    .timeline { border-left: 2px solid var(--line); padding-left: 22px; margin-top: 25px; }
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-item::before {
+      content: ""; position: absolute; left: -30px; top: 7px; width: 12px; height: 12px;
+      border-radius: 50%; background: var(--accent);
+    }
+    .timeline-item strong { display: block; }
+    .timeline-item span { color: var(--muted); }
+    .portfolio { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 32px; }
+    .portfolio-card { padding: 28px; background: #172033; color: white; border-radius: 16px; }
+    .portfolio-card p { color: #c8d0dc; }
+    .portfolio-card .mini { color: #aebdff; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
+    .contact {
+      background: #172033; color: white; border-radius: 24px; padding: 48px;
+      display: flex; justify-content: space-between; gap: 30px; align-items: center;
+    }
+    .contact p { color: #c8d0dc; max-width: 650px; }
+    footer { padding: 30px 0 50px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .grid, .split, .portfolio { grid-template-columns: 1fr; }
+      .hero { padding-top: 64px; }
+      .contact { flex-direction: column; align-items: flex-start; padding: 32px; }
+    }
+  
+/* Contact section alignment */
+.contact-section .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 32px;
+}
+
+.contact-section .contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 22px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+}
+
+.contact-section .contact-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  background: rgba(255,255,255,.09);
+}
+
+.contact-section .contact-card > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-section .contact-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .65;
+}
+
+.contact-section .contact-card a {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.contact-section .contact-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+@media (max-width: 850px) {
+  .contact-section .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-section .contact-card {
+    padding: 18px;
+  }
+
+  .contact-section .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-section .contact-actions .btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+</style>
+
+<style id="contact-alignment-fix">
+.contact-section .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 32px;
+}
+
+.contact-section .contact-card {
+  min-width: 0;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  box-sizing: border-box;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-section .contact-card > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-section .contact-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.contact-section .contact-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.contact-section .contact-card a {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.contact-section .contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .contact-section .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-section .contact-card {
+    padding: 18px;
+  }
+
+  .contact-section .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-section .contact-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
+
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Anbazhagan <span>K</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#industries">Industries</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container">
+        <div class="eyebrow">Senior Technical Writer · 10+ Years</div>
+        <h1>Making complex products <span>easier to understand.</span></h1>
+        <p class="lead">
+          Senior Technical Writer and Documentation Specialist with experience creating
+          product documentation, online help, release notes, user guides, structured content,
+          and technical documentation for complex products and enterprise software.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#portfolio">View My Work</a>
+          <a class="btn btn-secondary" href="#contact">Work With Me</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container split">
+        <div>
+          <div class="section-kicker">About</div>
+          <h2>Technical documentation that connects products with people.</h2>
+          <p class="section-intro">
+            I work with subject-matter experts, product teams, engineers and stakeholders
+            to understand complex systems and turn technical information into clear,
+            accurate and user-focused documentation.
+          </p>
+          <p class="section-intro">
+            My experience spans enterprise software and ERP, manufacturing, aerospace,
+            medical devices and other technically complex environments.
+          </p>
+        </div>
+        <div class="card">
+          <h3>What I bring</h3>
+          <p>10+ years of technical-writing experience across product documentation, online help, release documentation and structured authoring.</p>
+          <div class="tags">
+            <span class="tag">Product Documentation</span>
+            <span class="tag">Online Help</span>
+            <span class="tag">Release Notes</span>
+            <span class="tag">User Guides</span>
+            <span class="tag">Developer Docs</span>
+            <span class="tag">Structured Content</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-kicker">Expertise</div>
+        <h2>Documentation expertise</h2>
+        <p class="section-intro">From customer-facing product content to structured, developer-oriented documentation workflows.</p>
+        <div class="grid">
+          <div class="card"><h3>Product Documentation</h3><p>User guides, feature documentation, workflows, procedures and customer-facing product content.</p></div>
+          <div class="card"><h3>Developer Documentation</h3><p>Developer guides, integration documentation, API-oriented content and technical how-to material.</p></div>
+          <div class="card"><h3>Release Documentation</h3><p>Release notes, feature descriptions, enhancements, fixes and technical change communication.</p></div>
+          <div class="card"><h3>Online Help</h3><p>Task-oriented help content designed to help users complete workflows efficiently.</p></div>
+          <div class="card"><h3>DITA & Structured Authoring</h3><p>Structured content development using DITA/XML and Oxygen XML Editor.</p></div>
+          <div class="card"><h3>Doc-as-Code</h3><p>Documentation workflows using Markdown, AsciiDoc, Git, GitLab and VS Code.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="container">
+        <div class="section-kicker">Industries</div>
+        <h2>Domain experience</h2>
+        <div class="grid">
+          <div class="card"><h3>Enterprise Software & ERP</h3><p>QAD ERP and complex enterprise application workflows, including manufacturing, purchasing, costing and logistics.</p></div>
+          <div class="card"><h3>Manufacturing</h3><p>Documentation for manufacturing processes, supply-chain workflows and enterprise applications.</p></div>
+          <div class="card"><h3>Aerospace</h3><p>Technical documentation experience in aerospace environments, including exposure to S1000D and iSpec 2200.</p></div>
+          <div class="card"><h3>Medical Devices</h3><p>Technical and regulatory documentation exposure for medical-device software and healthcare technology.</p></div>
+          <div class="card"><h3>Oil & Gas</h3><p>Technical-content experience in technically complex industrial environments.</p></div>
+          <div class="card"><h3>AI & Modern Documentation</h3><p>AI-assisted documentation workflows and interest in modern documentation automation and evaluation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div>
+          <div class="section-kicker">Tools</div>
+          <h2>Tools & technologies</h2>
+          <div class="tags">
+            <span class="tag">DITA</span><span class="tag">XML</span><span class="tag">Oxygen XML Editor</span>
+            <span class="tag">Markdown</span><span class="tag">AsciiDoc</span><span class="tag">Git</span>
+            <span class="tag">GitLab</span><span class="tag">Git Bash</span><span class="tag">VS Code</span>
+            <span class="tag">MadCap Flare</span><span class="tag">Ixiasoft</span><span class="tag">Content Fusion</span>
+            <span class="tag">AI-assisted Documentation</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-kicker">Working style</div>
+          <h2>How I work</h2>
+          <div class="timeline">
+            <div class="timeline-item"><strong>Understand</strong><span>Learn the product, audience, workflow and technical context.</span></div>
+            <div class="timeline-item"><strong>Structure</strong><span>Organize information so users can find and understand what they need.</span></div>
+            <div class="timeline-item"><strong>Create</strong><span>Write clear, accurate and task-oriented documentation.</span></div>
+            <div class="timeline-item"><strong>Collaborate</strong><span>Work closely with SMEs, engineers, product teams and stakeholders.</span></div>
+            <div class="timeline-item"><strong>Improve</strong><span>Review, refine and modernize documentation using structured and AI-assisted workflows.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-kicker">Portfolio</div>
+        <h2>Selected work & sample projects</h2>
+        <p class="section-intro">
+          Confidential product material can be represented through sanitized samples and recreated examples without exposing proprietary information.
+        </p>
+        <div class="portfolio">
+          <div class="portfolio-card"><div class="mini">01 · Release Documentation</div><h3>Enterprise Software Release Notes</h3><p>Sample showing how complex product changes can be transformed into concise, customer-focused release documentation.</p></div>
+          <div class="portfolio-card"><div class="mini">02 · Online Help</div><h3>Task-Oriented Product Help</h3><p>Example of structuring an enterprise workflow into clear concepts, procedures and supporting reference content.</p></div>
+          <div class="portfolio-card"><div class="mini">03 · Developer Documentation</div><h3>API & Integration Guide</h3><p>Sample developer documentation demonstrating concepts, prerequisites, procedures, examples and reference information.</p></div>
+          <div class="portfolio-card"><div class="mini">04 · Doc-as-Code</div><h3>Structured Documentation Workflow</h3><p>Example showing Markdown/AsciiDoc, Git-based workflows, review practices and documentation automation concepts.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's work together</h2>
+      <p>Available for international remote technical writing and documentation contracts.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">✉</div>
+        <div>
+          <span class="contact-label">Email</span>
+          <a href="mailto:anbusignsin@gmail.com">anbusignsin@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">☎</div>
+        <div>
+          <span class="contact-label">Phone</span>
+          <a href="tel:+918825843583">+91 88258 43583</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">in</div>
+        <div>
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/anbazhagan-k-8ba992394" target="_blank" rel="noopener noreferrer">linkedin.com/in/anbazhagan-k-8ba992394</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:anbusignsin@gmail.com">Email Me</a>
+      <a class="btn btn-secondary" href="tel:+918825843583">Call Me</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/anbazhagan-k-8ba992394" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Anbazhagan K · Senior Technical Writer & Documentation Specialist</div>
+  </footer>
+</body>
+</html>
