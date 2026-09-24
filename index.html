@@ -444,6 +444,33 @@ footer {
     text-align: center;
   }
 }
+
+/* Final profile photo sizing */
+.profile-photo {
+  width: 220px !important;
+  height: 220px !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(229,9,20,.55) !important;
+  box-shadow: 0 20px 55px rgba(0,0,0,.55), 0 0 38px rgba(229,9,20,.18) !important;
+}
+
+@media (max-width: 900px) {
+  .profile-photo {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
 </style>
 
 </head>
