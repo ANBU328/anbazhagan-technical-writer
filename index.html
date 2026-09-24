@@ -31,7 +31,7 @@
       line-height: 1.65;
     }
     a { color: inherit; text-decoration: none; }
-    .container { width: min(92%, var(--max)); margin: 0 auto; }
+    .container { width: min(92%, var(--max, 1200px)); margin: 0 auto; }
     nav {
       position: sticky; top: 0; z-index: 10;
       background: rgba(255,255,255,.92);
@@ -41,7 +41,7 @@
     .nav-inner {
       min-height: 68px; display: flex; align-items: center; justify-content: space-between;
     }
-    .brand { font-weight: 800; letter-spacing: -.02em; }
+    .brand { font-weight: 900; font-size: 1.45rem; letter-spacing: -.03em; }
     .brand span { color: var(--accent); }
     .nav-links { display: flex; gap: 24px; font-size: .94rem; color: var(--muted); }
     .nav-links a:hover { color: var(--accent); }
@@ -343,6 +343,89 @@ footer {
   }
 }
 
+
+/* Portfolio alignment + profile hero */
+.container {
+  width: min(92%, 1200px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.nav-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+}
+
+.brand {
+  font-size: 1.5rem !important;
+  font-weight: 900 !important;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  width: min(100%, 360px);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px;
+  border: 2px solid rgba(229,9,20,.42);
+  box-shadow: 0 28px 70px rgba(0,0,0,.55), 0 0 45px rgba(229,9,20,.14);
+}
+
+.hero h1 {
+  max-width: 760px;
+}
+
+.hero .lead {
+  max-width: 720px;
+}
+
+@media (max-width: 900px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .hero-profile {
+    order: -1;
+  }
+
+  .profile-photo {
+    width: min(100%, 300px);
+  }
+}
+
+@media (max-width: 600px) {
+  .brand {
+    font-size: 1.25rem !important;
+  }
+
+  .hero .container {
+    width: min(92%, 560px);
+  }
+
+  .profile-photo {
+    width: min(78vw, 280px);
+    border-radius: 22px;
+  }
+}
+
 </style>
 
 <style id="contact-alignment-fix">
@@ -451,16 +534,21 @@ footer {
   <main id="top">
     <header class="hero">
       <div class="container">
-        <div class="eyebrow">Senior Technical Writer · 10+ Years</div>
-        <h1>Making complex products <span>easier to understand.</span></h1>
-        <p class="lead">
-          Senior Technical Writer and Documentation Specialist with experience creating
-          product documentation, online help, release notes, user guides, structured content,
-          and technical documentation for complex products and enterprise software.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#portfolio">View My Work</a>
-          <a class="btn btn-secondary" href="#contact">Work With Me</a>
+        <div class="hero-copy">
+          <div class="eyebrow">Senior Technical Writer · 10+ Years</div>
+          <h1>Making complex products <span>easier to understand.</span></h1>
+          <p class="lead">
+            Senior Technical Writer and Documentation Specialist with experience creating
+            product documentation, online help, release notes, user guides, structured content,
+            and technical documentation for complex products and enterprise software.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#portfolio">View My Work</a>
+            <a class="btn btn-secondary" href="#contact">Work With Me</a>
+          </div>
+        </div>
+        <div class="hero-profile">
+          <img class="profile-photo" src="assets/anbazhagan-profile.jpg" alt="Anbazhagan K — Senior Technical Writer">
         </div>
       </div>
     </header>
